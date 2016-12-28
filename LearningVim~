@@ -1,0 +1,89 @@
+Insert commands:
+i -> inser before letter
+I -> insert beginning line
+a -> append after letter
+A -> append after line
+o -> open a new line after current line
+O -> open a new line before current line
+
+Replacement command:
+r -> replaces current letter
+R -> replace all following characters
+
+Word Movement:
+w -> skip to next word
+W -> skip to next WORD: ie. with punctuation ignored
+e -> move to the end of word
+E -> move to the end of WORD
+
+Change Modifier:
+c -> change modifier with word movement and navigation commands eg. cw, cE
+C -> change to end of line
+
+Delete Characters:
+x -> delete a single character
+X -> delete a single character before the curser ie. backspace
+d -> delete with modifier appended eg. dw, dE
+D -> deletes till end of line
+
+Open Files:
+:e file_name - edit file
+
+Yanking, Cutting and Pasting(works only on vim buffers)
+y -> 'Yank' followed by modifier eg. yE
+Y -> Yank current line
+p -> 'Paste' after curser
+P -> Pase before curser
+cut -> all delete modifiers put text in buffer and can use P to pase from buffer
+
+Count Modifiers:
+4H -> move left 4 times
+d2e -> delete till end of 2 words
+d2w -> delete next two words
+y2w -> yank next two words
+yy, dd -> repeat command to do it to whole line eg. yank line, delete
+d14d -> delete 14 lines
+dgg -> delete everything from cursor to top of document
+
+Movement Commands:
+G -> last line of document
+gg -> first line of document
+17G -> go to line 17
+y17G -> yank till line 17
+
+Search and Replace:
+/text -> searches for the text after curser, use n to go to next text, N to go to previous text
+?text -> search backwards for text ie before curser
+:start,end/query/replace/<flags> - search and replace, g flag replaces multiple instances in same line
+:%s/query/replace/<flag> - search and replace whole file
+:nohlsearch - disable highlights
+
+Windows and Tabs:
+:split -> split the window in two with two copies of same file
+ctrl+w -> move between windows eg. :wk moves one window down and :wl moves one window right
+:vsplit -> split vertically
+ctrl+w -> window modifier
+ctrl+w s -> split windows
+ctrl+w v -> split windows vertically
+:q -> quits selected window
+:qa -> close all windows
+ctrl+w c -> close window
+:vsplit filename -> splits to two seperate files
+:tabnew -> cretes a new tab not viewed side by side
+:tabp -> switch to previous tab
+:tabn -> switch to next tab
+:tabp2 -> switch to 2nd previous tab
+:tabclose -> close tab
+
+Marking Files:
+mletter -> m followed by a letter will mark a line eg. mr will mark with m
+'letter -> will take to where we marked with letter eg. 'r will take to makred liine
+
+Syntax Edit:
+% -> find corresponding open/close bracket
+<> -> indent and de-indent
+= -> auto indent based on langugage
+~ -> toggle case of character
+gg =G -> auto indent whole document
+
+

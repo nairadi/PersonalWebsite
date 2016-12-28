@@ -1,0 +1,151 @@
+print:
+print "Hello world!"
+puts stuff
+#Kernel.puts "blah" does the same stuff as puts
+#puts("blah")
+classes:
+class Animal
+attr_accessor :name, :age, :trait
+end
+
+objects:
+first_animal = Animal.new
+first_animal.name = "Floyd"
+first_animal.age = 93
+first_animal.trait = "annoying"
+#first_animal.class = tells us which class first_animal belongs to
+
+inheritance:
+class Animal
+attr_accessor :name, :age, :trait
+end
+class Dog < Animal
+end
+class Cat < Animal
+end
+class Fish < Animal
+attr_accessor :type
+end
+
+methods:
+class Dog
+def talk
+puts "Bark!"
+end
+end
+
+arguments:
+talk(123)
+
+string:
+str.length
+str.upcase
+str1 + str2
+str.reverse
+str.reverse.upcase
+#can do multiple methods in same line
+#multi line string variable
+tuna = <<mark
+" hello
+" my name is
+" adi
+" i
+" love
+" chicken
+" mark
+
+conditional statements and operators:
+operators: <, >, ==, >=, <=, !=, &&, ||, unless
+weight = 120
+puts"You need to eat a cheesburger" if weight < 150
+age = 23
+puts "I will date you!" unless age < 18
+
+loops:
+8.times do puts "Stuff" end
+#or
+4.times {puts "stuff"}
+#or
+3.upto(7) {puts "count from 3 to 7"}
+#or
+15.downto(12) {puts "count from 15 to 12"}
+#or
+0.step(15,5) {puts "count from 0 to 15 in steps of 5"}
+#or to get the loop variable
+1.upto(10 {|x| puts x}
+
+type conversion:
+c = 13
+c.to_f
+
+constants:
+Pi = 3.1415
+#just start the variable with a capital letter, will allow to change the value but will give a  warning when you change it
+
+Interpolation:
+a = 4
+b = 6
+puts " #{a} * #{b} = #{a*b} "
+
+regular expression:
+a = "yo, how are you doing are"
+a.sub("are","is")
+#outputs: yo, how is you doing are
+#to change both are
+a.gsub("are","is")
+a.sub(/^../, 'Excuse me')
+#outputs: Excuse me, how are you doing are
+#the ^ represent the start and the two dots implies the first two characters
+b = "wow i am so screwed
+b.scan(/.../) {|b| puts b}
+#output: prints three characters, the next three etc.
+b.scan(/\s\s\s/)
+#output: same as above but ignores white space
+c = "I have 45 cards and blah has 62"
+c.scan(/\d+/) {|z| puts z}
+#\d scans digit, to select a number, do \d+ which will select all adjacent digits as a number
+d = "wow i freaking lve beans!"
+d.scan(/[asw]/) {|y| puts y}
+#output: will print a, s or w through the sentence in the order they appear
+d.scan(/[a-g]/) {|y| puts y}
+#output: selects all letter between a - g
+"Your name can not contain numbers" if "Adi34" =~ /[0-9]/
+puts "Telephone nuber can't contain letters!" if "23084alkjsdf09832".match(/[a-z]/)
+puts "Telephone nuber can't contain letters!" if "23423423455354832".match(/[a-z]/)
+
+array:
+ip = [3,5,7,93,234]
+puts ip.[0]
+#outputs: 3
+ip[2] = 121
+#outputs: ip = [3,5,121,93,234]
+cheese = []
+cheese << "first item"
+#pushing into array, can also use push method to do the same
+cheese.push("second item")
+cheese.pop
+#removes last item, in this cames second item
+num = [10,20,30,40,50]
+num.each {|x| puts x}
+num.length
+boys = ["ab", "cd", "ef"]
+girls = ["gh", "ij", "kl"]
+people = boys + girls
+noboys = people - boys
+girls.include?("ij")
+people.first
+people.last
+people.first(4) #gives first four people
+people.reverse
+puts ip.[0]
+
+hashes:
+example = {'bucky' => 'nice guy', 'emma' => 'good gal', 'peter' => 'family guy'}
+#key=>value pair
+print example.size
+print example['bucky']
+example['bucky'] = 'fattest guy'
+example.each{|a,b| puts a+b}
+puts example.keys
+example.delete("emma")
+
